@@ -1,0 +1,158 @@
+39.106.14.209(公)
+172.17.9.44(私有)
+图片前加：
+http://api02u58f.zhuishushenqi.com
+图片解码
+var src = decodeURIComponent(item.cover);
+src = src.split("/agent/")[1];
+
+
+接口：
+追书神器
+api分析：http://www.ctolib.com/mip/xiadd-zhuishushenqi.html
+
+
+extra：
+//追书栏目副标题
+app.get('/subtitle', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/notification/shelfMessage?platform=android", res);
+})
+
+//首页 
+app.get('/shouye', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/v2/posts/list", res);
+})
+
+//广告
+app.get('/guanggao', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/advert?platform=android&position=all", res);
+})
+
+//游戏
+app.get('/youxi', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/game/layoutv2/?platform=android", res);
+})
+
+//社区-公共板块
+/*（排序方式 sort=comment-count
+			   sort=updated
+		  精品     distillate=true
+		）*/
+//二次yuan
+app.get('/erciyuan', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/post/by-block?block=erciyuan&duration=all&sort=comment-count&type=all&start=0&limit=20", res);
+})
+
+//综合讨论
+app.get('/zonghetaolun', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/post/by-block?block=ramble&duration=all&sort=updated&type=all&start=0&limit=20", res);
+})
+
+//书荒互助：
+//待回答
+app.get('/shuhuanghuzhu/daihuida', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/bookAid/questions?token=0l0LHlBeFEEUTCDOf3DRANtr&tab=wait&next=null&limit=10", res);
+})
+//热门
+app.get('/shuhuanghuzhu/remen', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/bookAid/questions?token=0l0LHlBeFEEUTCDOf3DRANtr&tab=trend&next=null&limit=10", res);
+})
+
+//全部
+app.get('/shuhuanghuzhu/quanbu', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/bookAid/questions?token=0l0LHlBeFEEUTCDOf3DRANtr&tab=all&next=null&limit=10", res);
+})
+
+//精彩书评
+app.get('/jingcaishuping', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/post/review?duration=all&sort=updated&type=all&start=20&limit=20", res);
+})
+
+//活动福利
+app.get('/huodongfuli', (req, res) => {
+	stealData("http://api02u58f.zhuishushenqi.com/post/by-block?block=fuli&duration=all&sort=updated&type=all&start=0&limit=20", res);
+})
+
+/*
+书库：
+api接口
+*/
+
+//获取带书籍数量的父分类
+categories
+
+//获取带子分类的分类
+/sub-categories
+
+//获取分类详情
+/books
+
+//书单
+/book-list
+
+获取书籍详情
+url: http://novel.juhe.im/book-info/{_id}
+
+params:
+
+{
+  id: book id
+}
+
+获取书籍相关推荐
+url: http://novel.juhe.im/recommend/{_id}
+
+
+获取作者名下的书籍
+url: http://novel.juhe.im/author-books?author=忘语
+
+
+获取书籍源
+url: http://novel.juhe.im/book-sources?view=summary&book=567d2cb9ee0e56bc713cb2c0
+query:
+{
+  view: summary,
+  book: {bookid}
+}
+
+
+获取书籍章节
+url: http://novel.juhe.im/book-chapters/{_id}
+params:
+{
+  id: {书籍源id}
+}
+
+
+获取搜索结果
+url: http://novel.juhe.im/search?keyword={_wd}
+query:
+{
+  keyword: {书籍关键字}
+}
+
+
+获取排名分类
+url: http://novel.juhe.im/rank-category
+
+
+
+获取排名详情
+url: http://novel.juhe.im/rank/{_id}
+params:
+{
+  id: {排名分类的id}
+}
+
+h2{
+    display: flex;
+    align-items: center;
+    span{
+        width: 8px;
+        height: 40px;
+        background: #d82626;
+        margin-right: 8px;
+    }
+    font-size: 40px;
+    color: #333333;
+}
