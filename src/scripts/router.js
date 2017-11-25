@@ -12,7 +12,8 @@ import Faxian from "./containers/faxian";
 import Shequ from "./containers/shequ";
 import Login from "./containers/login";
 import Detail from "./containers/detail";
-
+import Search from "./containers/search";
+import QueueAnim from 'rc-queue-anim';
 export default class MyRouter extends Component{
     render(){
         return(
@@ -21,6 +22,7 @@ export default class MyRouter extends Component{
                 <Route path="/detail/:bookid" component={Detail}></Route>
                 <Route path="/login" component={Login}></Route>
                 <Route path="/guide" component={Guide}/>
+                <Route path="/search" component={Search}/>
             </Router>
         )
     }

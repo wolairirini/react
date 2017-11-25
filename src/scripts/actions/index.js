@@ -89,3 +89,25 @@ export function getlists(dispatch){
             return dispatch({type:"getlists",preload:json})
         })
 }
+
+// 获取社区书籍
+export function getbooks2(dispatch){
+    return axios.get("http://novel.juhe.im/rank/550b836229cd462830ff4d1d")
+    .then(res=>{
+        return res.data;
+    })
+    .then(json=>{
+        return dispatch({type:"getbooks2",preload:json})
+    })
+}
+
+//搜索
+export function search(msg,dispatch){
+    return axios.get("http://novel.juhe.im/search?keyword="+msg)
+    .then(res=>{
+        return res.data;
+    })
+    .then(json=>{
+        return dispatch({type:"search",preload:json})
+    })
+}

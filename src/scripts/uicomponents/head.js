@@ -17,7 +17,7 @@ export default class Head extends Component{
                     <h1><img src={require("../../assets/icon/logo.jpg")}/></h1>
                     <ul>
                         <li><img src={require("../../assets/icon/images/headicon_03.jpg")}/></li>
-                        <li><img src={require("../../assets/icon/images/headicon_05.jpg")}/></li>
+                        <li><Link to="/search"><img src={require("../../assets/icon/images/headicon_05.jpg")}/></Link></li>
                         <li><img  onTouchStart={togglemore} src={require("../../assets/icon/images/headicon_07.jpg")}/></li>
                     </ul>
                 </div>

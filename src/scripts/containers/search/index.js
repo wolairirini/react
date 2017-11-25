@@ -1,20 +1,20 @@
-import Faxian from "../../uicomponents/faxian";
+import Search from "../../uicomponents/search";
 
 import {connect} from "react-redux";
-
+import {} from "../../actions";
 const mapStateToProps = (state)=>{
-    return {
-
-        
+    return { 
+        searches:state.searches
     }
 }
 const mapDispatchToProps = (dispatch)=>{
     return{
-        dispatch
+        dispatch,
+        
     }
-} 
+}
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Faxian)
+)(Search)

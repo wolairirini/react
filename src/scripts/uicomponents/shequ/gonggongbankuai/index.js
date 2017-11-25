@@ -1,7 +1,7 @@
 import React,{Component} from "react";
-
+import {Link} from "react-router";
 //组件
-
+import { Carousel } from "antd"
 import ReactSwipe  from "react-swipe";
 
 export default class Gonggongbankuai extends Component{
@@ -20,21 +20,37 @@ export default class Gonggongbankuai extends Component{
         console.log(shequs)
         return (
             <div className="gonggongbankuai">
-                <h1>Gonggongbankuai Page</h1>
-                <ReactSwipe className="carousel" swipeOptions={{continuous: false}}>
-                        <div>
+                <h1>公共板块</h1>
+                <Carousel>
+                    <div className="s0">
                     {
-                        shequs.map((item,index)=>{
+                    shequs.map((item,index)=>{
+                        if(index<8){
                             return(
-                                <div key={index}>
+                                <Link to={"/"} key={index}>
                                     <img src={item.icon}/>
                                     <p>{item.title}</p>
-                                </div>
+                                </Link>
                             )
-                        })
+                        }
+                    })
                     }
                     </div>
-                </ReactSwipe>
+                    <div  className="s0">
+                    {
+                    shequs.map((item,index)=>{
+                        if(index>8){
+                            return(
+                                <Link to={"/"} key={index}>
+                                    <img src={item.icon}/>
+                                    <p>{item.title}</p>
+                                </Link>
+                            )
+                        }
+                    })
+                    }
+                    </div>
+                </Carousel>
             </div>
         )
     }

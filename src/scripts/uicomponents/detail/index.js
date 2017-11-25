@@ -62,7 +62,7 @@ export default class Zhuishu extends Component{
                                     <p>{score}分 {detail.rating?detail.rating.count:""}人评</p>
                                 </div>
                                 <p>{Math.ceil(detail.wordCount/10000)}万字 | {detail.isSerial?"连载中":"完结"}</p>
-                                <span>{detail.buytype}书币/千字</span>
+                                <span>人气 {detail.buytype}</span>
                             </div>
                         </div>
                         <div className="about">

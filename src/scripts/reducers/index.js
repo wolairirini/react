@@ -7,7 +7,9 @@ var initState = {
     swipeindex:0,
     likes:[],
     lists:[],
-    shequs:[]
+    shequs:[],
+    books2:[],
+    searches:[]
 }
 
 export default (state=initState,action)=>{
@@ -34,6 +36,14 @@ export default (state=initState,action)=>{
             break;
         case "getbooks":
             state.books=action.preload.data.ranking.books;
+            return {...state}
+            break;
+        case "search":
+            state.searches=action.preload.data.books;
+            return {...state}
+            break;
+        case "getbooks2":
+            state.books2=action.preload.data.ranking.books;
             return {...state}
             break;
         case "getadvs":

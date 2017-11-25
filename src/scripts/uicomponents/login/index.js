@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import {Icon} from "antd";
-import {Link,hashHistory} from "react-router";
+import {Link,browserHistory} from "react-router";
 export default class Login extends Component{
     login(e){
         e.preventDefault();
@@ -32,7 +32,7 @@ export default class Login extends Component{
                                 <span><i className="iconfont icon-xiaomi"></i></span>
                             </div>
                             <p><Link to="/">点击登录即代表同意追书神器《用户协议》</Link></p>
-                            <button onClick={()=>{hashHistory.push("/")}}>退出</button>
+                            <button onClick={()=>{browserHistory.push("/")}}>退出</button>
                         </fieldset>
                     </form>
                 </div>
