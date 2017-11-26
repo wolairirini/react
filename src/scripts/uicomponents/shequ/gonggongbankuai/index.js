@@ -17,7 +17,6 @@ export default class Gonggongbankuai extends Component{
     }
     render(){
         const {shequs} = this.props;
-        console.log(shequs)
         return (
             <div className="gonggongbankuai">
                 <h1>公共板块</h1>

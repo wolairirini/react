@@ -111,3 +111,59 @@ export function search(msg,dispatch){
         return dispatch({type:"search",preload:json})
     })
 }
+
+
+// 获取排行 
+export function getpaihang(dispatch){
+    return axios.get("http://novel.juhe.im/rank-category")
+    .then(res=>{
+        return res.data;
+    })
+    .then(json=>{
+        return dispatch({type:"getpaihang",preload:json})
+    })
+}
+
+// 获取排行详情
+export function getpaihangs(paihangid,dispatch){
+    return axios.get("http://novel.juhe.im/rank/"+paihangid)
+    .then(res=>{
+        return res.data;
+    })
+    .then(json=>{
+        return dispatch({type:"getpaihangs",preload:json})
+    })
+}
+
+
+// 更改id
+export function changepaihangid(paihangid){
+    return {
+        type:"changepaihangid",
+        paihangid:paihangid
+    }
+}
+
+
+// 获取书籍原
+export function geturl(bookid,dispatch){
+    return axios.get("http://novel.juhe.im/book-sources?view=summary&book="+bookid)
+    .then(res=>{
+        return res.data;
+    })
+    .then(json=>{
+        return dispatch({type:"geturl",preload:json})
+    })
+}
+
+
+// 获取zhangjie
+export function getmulu(muluid,dispatch){
+    return axios.get("http://novel.juhe.im/book-chapters/"+muluid)
+    .then(res=>{
+        return res.data;
+    })
+    .then(json=>{
+        return dispatch({type:"getmulu",preload:json})
+    })
+}

@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import {getdetail,getadvs,getlike,getlists} from "../../actions";
+import {getdetail,getadvs,getlike,getlists,geturl} from "../../actions";
 import {Link} from "react-router";
 
 //组件
@@ -18,11 +18,12 @@ export default class Zhuishu extends Component{
         dispatch(getdetail(bookid,dispatch));
         dispatch(getadvs(dispatch));
         dispatch(getlists(dispatch));
-        dispatch(getlike(bookid,dispatch))
+        dispatch(getlike(bookid,dispatch));
+        dispatch(geturl(bookid,dispatch));
     }
     render(){
         const {bookid} = this.props.params;
-        const {detail,advs,likes,lists} = this.props;
+        const {detail,advs,likes,lists,url} = this.props;
         //http://api02u58f.zhuishushenqi.com
         //图片解码
         var src = decodeURIComponent(detail.cover);
@@ -173,7 +174,7 @@ export default class Zhuishu extends Component{
                         </ul>
                     </div>
                 </div>
-                <Footer></Footer>
+                <Footer url={url}></Footer>
             </div>
         )
     }

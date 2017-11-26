@@ -7,7 +7,8 @@ const mapStateToProps = (state)=>{
         detail:state.detail,
         advs:state.advs,
         likes:state.likes,
-        lists:state.lists
+        lists:state.lists,
+        url:state.url
     }
 }
 const mapDispatchToProps = (dispatch)=>{

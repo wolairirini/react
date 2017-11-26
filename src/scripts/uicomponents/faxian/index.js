@@ -7,7 +7,7 @@ export default class Faxian extends Component{
         return (
             <div className="faxian swiper-slide">
                 <ul>
-                    <li><img src={require("../../../assets/icon/images/faxian_01.jpg")}/><Link to="/">排行榜</Link><i className="iconfont icon-jiantouyou"></i></li>
+                    <li><img src={require("../../../assets/icon/images/faxian_01.jpg")}/><Link to="/paihang">排行榜</Link><i className="iconfont icon-jiantouyou"></i></li>
                     <li><img src={require("../../../assets/icon/images/faxian_02.jpg")}/><Link to="/">分类</Link><i className="iconfont icon-jiantouyou"></i></li>
                     <li><img src={require("../../../assets/icon/images/faxian_03.jpg")}/><Link to="/">主题书单</Link><i className="iconfont icon-jiantouyou"></i></li>
                     <li><img src={require("../../../assets/icon/images/faxian_04.jpg")}/><Link to="/">有声小说</Link><i className="iconfont icon-jiantouyou"></i></li>

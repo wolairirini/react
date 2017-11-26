@@ -9,12 +9,31 @@ var initState = {
     lists:[],
     shequs:[],
     books2:[],
-    searches:[]
+    searches:[],
+    paihang:{},
+    paihangs:[],
+    paihangid:"54d42d92321052167dfb75e3",
+    url:[],
+    mulu:[]
 }
 
 export default (state=initState,action)=>{
     switch(action.type){
         case "0":
+            break;
+        case "geturl":
+            state.url=action.preload.data;
+            return {...state}
+            break;
+        
+        case "getmulu":
+            state.mulu=action.preload.data.chapters;
+            return {...state}
+            break;
+        
+        case "getpaihang":
+            state.paihang=action.preload.data;
+            return {...state}
             break;
         case "getshequ":
             state.shequs=action.preload.data;
@@ -60,6 +79,16 @@ export default (state=initState,action)=>{
         case "getlike":
             state.likes = action.preload.data.books;
             return {...state};
+            
+        case "getpaihangs":
+            state.paihangs=action.preload.data.ranking.books;
+            return {...state}
+            break;
+        case "changepaihangid":
+            state.paihangid=action.paihangid;
+            return {...state}
+            break;
+        
         default:
             return {...state};
             break;
