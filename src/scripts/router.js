@@ -16,6 +16,7 @@ import Search from "./containers/search";
 import QueueAnim from 'rc-queue-anim';
 import Paihang from "./containers/paihang";
 import Mulu from "./containers/mulu";
+import Content from "./containers/content";
 
 export default class MyRouter extends Component{
     render(){
@@ -28,6 +29,8 @@ export default class MyRouter extends Component{
                 <Route path="/paihang" component={Paihang}/>
                 <Route path="/mulu/:muluid" component={Mulu}/>
                 <Route path="/detail/:bookid" component={Detail}></Route>
+                <Route path="/content/:muluid/:i" component={Content}/>
+                
             </Router>
         )
     }

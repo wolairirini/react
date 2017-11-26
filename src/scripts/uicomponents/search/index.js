@@ -7,7 +7,6 @@ import SearchHead from "../../containers/search/head";
 export default class Search extends Component{
     render(){
         const {searches} = this.props;
-        console.log(searches);
         return (
             <div className="search">
                <SearchHead/>
