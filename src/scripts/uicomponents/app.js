@@ -4,7 +4,7 @@ import React,{Component} from "react";
 import Head from "../containers/head";
 import Zhuishu from "../containers/zhuishu";
 import Shequ from "../containers/shequ";
-import Faxian from "../containers/Faxian";
+import Faxian from "../containers/faxian";
 import Swipe from "../utils/swiper-3.3.1.min.js";
 
 export default class App extends Component{

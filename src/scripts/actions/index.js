@@ -1,7 +1,7 @@
 import store from "../store";
 import axios from "axios";
 import $ from "jquery";
-axios.defaults.baseURL="http://localhost:7777";
+axios.defaults.baseURL="http://39.106.14.209:7777";
 export function togglemore(){
     return {
         type:"togglemore"
